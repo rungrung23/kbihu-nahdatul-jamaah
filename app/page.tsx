@@ -115,6 +115,7 @@ export default function Home() {
             <a href="#beranda" className="text-sm text-white transition hover:text-[#d6b45c]">Beranda</a>
             <a href="#tentang" className="text-sm text-white transition hover:text-[#d6b45c]">Tentang Kami</a>
             <a href="#program" className="text-sm text-white transition hover:text-[#d6b45c]">Program Umroh</a>
+            <a href="#galeri" className="text-sm text-white transition hover:text-[#d6b45c]">Galeri</a>
             <a href="#keunggulan" className="text-sm text-white transition hover:text-[#d6b45c]">Keunggulan</a>
             <a href="#faq" className="text-sm text-white transition hover:text-[#d6b45c]">FAQ</a>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#d6b45c] px-5 py-2.5 text-sm font-semibold text-[#17352c] transition hover:bg-[#e5c875]">Hubungi Kami</a>
@@ -127,6 +128,7 @@ export default function Home() {
                 <a href="#beranda" className="rounded-xl px-4 py-3 text-sm text-white hover:bg-white/10">Beranda</a>
                 <a href="#tentang" className="rounded-xl px-4 py-3 text-sm text-white hover:bg-white/10">Tentang Kami</a>
                 <a href="#program" className="rounded-xl px-4 py-3 text-sm text-white hover:bg-white/10">Program Umroh</a>
+                <a href="#galeri" className="rounded-xl px-4 py-3 text-sm text-white hover:bg-white/10">Galeri</a>
                 <a href="#keunggulan" className="rounded-xl px-4 py-3 text-sm text-white hover:bg-white/10">Keunggulan</a>
                 <a href="#faq" className="rounded-xl px-4 py-3 text-sm text-white hover:bg-white/10">FAQ</a>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-2 rounded-xl bg-[#d6b45c] px-4 py-3 text-center text-sm font-semibold text-[#17352c]">Hubungi Kami</a>
@@ -137,7 +139,7 @@ export default function Home() {
       </header>
 
       <section id="beranda" className="relative flex min-h-screen items-center overflow-hidden bg-[#0d3b2e]">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=2200&q=90')" }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/jamaah/rombongan-haji-2024.webp')" }} />
         <div className="absolute inset-0 bg-[#062a20]/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#062a20] via-[#0d3b2e]/85 to-[#0d3b2e]/30" />
 
@@ -199,11 +201,50 @@ export default function Home() {
 
           <div className="relative">
             <div className="overflow-hidden rounded-[2rem]">
-              <img src="https://images.unsplash.com/photo-1542816417-0983670d3e17?auto=format&fit=crop&w=1200&q=85" alt="Masjid" className="h-[500px] w-full object-cover" />
+              <img src="/images/jamaah/jamaah-makkah.webp" alt="Jamaah KBIHU Nahdatul Jamaah di Makkah" className="h-[500px] w-full object-cover" />
             </div>
             <div className="absolute -bottom-6 -left-6 rounded-2xl bg-[#d6b45c] p-6 shadow-xl">
               <div className="text-3xl font-bold text-[#17352c]">100%</div>
               <div className="text-sm font-medium text-[#17352c]/80">Fokus pada<br />Kenyamanan Jamaah</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="galeri" className="bg-white px-6 py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b28d32]">Dokumentasi Asli</p>
+            <h2 className="mt-3 text-4xl font-semibold text-[#17352c] sm:text-5xl">Momen perjalanan jamaah bersama kami.</h2>
+            <p className="mt-5 leading-7 text-gray-600">Sebagian dokumentasi kegiatan dan perjalanan jamaah KBIHU Nahdatul Jamaah.</p>
+          </div>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { src: "jamaah-hotel-01.webp", alt: "Rombongan jamaah di hotel", title: "Kebersamaan Jamaah" },
+              { src: "jamaah-hotel-02.webp", alt: "Jamaah berkumpul di area hotel", title: "Persiapan Perjalanan" },
+              { src: "rombongan-haji-2024.webp", alt: "Rombongan Haji KBIHU Nahdatul Jamaah tahun 2024", title: "Rombongan Haji 2024" },
+              { src: "jamaah-hotel-03.webp", alt: "Jamaah KBIHU Nahdatul Jamaah", title: "Pendampingan Jamaah" },
+              { src: "jamaah-makkah.webp", alt: "Jamaah di kawasan Masjidil Haram", title: "Perjalanan ke Tanah Suci" },
+              { src: "jamaah-manasik.webp", alt: "Kegiatan bersama jamaah saat ibadah", title: "Kegiatan Jamaah" }
+            ].map((photo) => (
+              <figure key={photo.src} className="group overflow-hidden rounded-2xl bg-[#f8f6ef]">
+                <img src={`/images/jamaah/${photo.src}`} alt={photo.alt} loading="lazy" className="h-72 w-full object-cover transition duration-500 group-hover:scale-105" />
+                <figcaption className="px-5 py-4 font-semibold text-[#17352c]">{photo.title}</figcaption>
+              </figure>
+            ))}
+          </div>
+          <div className="mt-16 grid items-start gap-8 lg:grid-cols-2">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b28d32]">Profil & Informasi</p>
+              <h3 className="mt-3 text-3xl font-semibold text-[#17352c]">Mengenal KBIHU Nahdatul Jamaah</h3>
+              <p className="mt-4 leading-7 text-gray-600">Informasi profil, pembimbing, akreditasi, dan fasilitas sebagaimana tercantum pada materi resmi KBIHU.</p>
+              <img src="/images/jamaah/profil-kbihu-haji-reguler.webp" alt="Materi profil KBIHU Nahdatul Jamaah dan informasi Haji Reguler" loading="lazy" className="mt-6 w-full rounded-2xl border border-[#17352c]/10 object-contain shadow-sm" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold text-[#17352c]">Dokumentasi dan kalender kegiatan</h3>
+              <p className="mt-4 leading-7 text-gray-600">Materi kalender dan informasi kegiatan KBIHU sebagai referensi bagi calon jamaah.</p>
+              <img src="/images/jamaah/profil-kbihu-kalender-2027.webp" alt="Kalender 2027 KBIHU Nahdatul Jamaah" loading="lazy" className="mt-6 w-full rounded-2xl border border-[#17352c]/10 object-contain shadow-sm" />
+              <img src="/images/jamaah/informasi-kbihu.webp" alt="Materi informasi dan persyaratan bimbingan KBIHU" loading="lazy" className="mt-6 w-full rounded-2xl border border-[#17352c]/10 object-contain shadow-sm" />
             </div>
           </div>
         </div>
