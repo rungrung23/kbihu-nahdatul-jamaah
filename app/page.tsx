@@ -54,27 +54,6 @@ const advantages = [
   }
 ];
 
-const testimonials = [
-  {
-    name: "Bapak Ahmad",
-    role: "Jamaah Umroh",
-    text: "Alhamdulillah, selama perjalanan kami merasa sangat terbantu. Bimbingannya jelas dan pendampingannya membuat kami lebih tenang.",
-    dark: false
-  },
-  {
-    name: "Ibu Siti",
-    role: "Jamaah Umroh",
-    text: "Pelayanan yang diberikan sangat baik. Kami merasa didampingi dari persiapan sampai perjalanan ibadah.",
-    dark: true
-  },
-  {
-    name: "Bapak Ridwan",
-    role: "Jamaah Umroh",
-    text: "Sangat bersyukur bisa menjalankan ibadah dengan pendampingan yang baik dan suasana yang nyaman.",
-    dark: false
-  }
-];
-
 const faqs = [
   {
     question: "Bagaimana cara mendaftar program Umroh?",
@@ -291,28 +270,6 @@ export default function Home() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0d3b2e] text-sm font-bold text-[#d6b45c]">{item.number}</div>
                 <h3 className="mt-7 text-xl font-semibold text-[#17352c]">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-gray-500">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-6 py-24 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b28d32]">Testimoni Jamaah</p>
-            <h2 className="mt-3 text-4xl font-semibold text-[#17352c] sm:text-5xl">Cerita dari perjalanan mereka.</h2>
-          </div>
-
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.name} className={testimonial.dark ? "rounded-3xl bg-[#0d3b2e] p-8" : "rounded-3xl bg-[#f8f6ef] p-8"}>
-                <div className="text-xl text-[#d6b45c]">★★★★★</div>
-                <p className={testimonial.dark ? "mt-6 leading-7 text-white/70" : "mt-6 leading-7 text-gray-600"}>“{testimonial.text}”</p>
-                <div className="mt-7">
-                  <div className={testimonial.dark ? "font-semibold text-white" : "font-semibold text-[#17352c]"}>{testimonial.name}</div>
-                  <div className={testimonial.dark ? "text-sm text-white/50" : "text-sm text-gray-500"}>{testimonial.role}</div>
-                </div>
               </div>
             ))}
           </div>
